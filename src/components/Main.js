@@ -24,10 +24,6 @@ function Main({ onCardClick, onEditAvatar, onEditProfile, onAddPlace }) {
       });
   }, []);
 
-  const cardElements = cards.map((card) => (
-    <Card key={card._id} card={card} onCardClick={onCardClick} />
-  ));
-
   return (
     <>
       <main className="content page__content">
@@ -72,7 +68,11 @@ function Main({ onCardClick, onEditAvatar, onEditProfile, onAddPlace }) {
         </section>
 
         {/*Карточки с фотографиями*/}
-        <section className="elements">{cardElements}</section>
+        <section className="elements">
+          {cards.map((card) => (
+            <Card key={card._id} card={card} onCardClick={onCardClick} />
+          ))}
+        </section>
       </main>
     </>
   );

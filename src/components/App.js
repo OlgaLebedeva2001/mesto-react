@@ -12,11 +12,10 @@ function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState("");
   const [selectedCard, setSelectedCard] = React.useState(null);
 
-
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
   }
-
+  
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
   }
@@ -36,7 +35,6 @@ function App() {
     setSelectedCard(null);
   }
 
-
   return (    
       <div className='page'>
         <Header/>
@@ -55,6 +53,7 @@ function App() {
         title="Обновить аватар"
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}
+        buttonText={"Сохранить"}
       >
         <div className="popup__label">
           <input
@@ -67,12 +66,7 @@ function App() {
           />
           <span className="avatar-error popup__input-error"></span>
         </div>
-        <button
-          className="popup__button-submit popup__button-submit_valid"
-          type="submit"
-        >
-          Сохранить
-        </button>
+     
       </PopupWithForm>
 
       <PopupWithForm
@@ -80,6 +74,7 @@ function App() {
         title="Редактировать профиль"
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
+        buttonText={"Сохранить"}
       >
         <div className="popup__label">
           <input
@@ -107,12 +102,7 @@ function App() {
           />
           <span className="job-error popup__input-error"></span>
         </div>
-        <button
-          className="popup__button-submit popup__button-submit_valid"
-          type="submit"
-        >
-          Сохранить
-        </button>
+        
       </PopupWithForm>
 
       <PopupWithForm
@@ -120,6 +110,7 @@ function App() {
         title="Новое место"
         isOpen={isAddPlacePopupOpen}
         onClose={closeAllPopups}
+        buttonText={"Создать"}
       >
         <div className="popup__label">
           <input
@@ -145,28 +136,20 @@ function App() {
           />
           <span className="link-error popup__input-error"></span>
         </div>
-        <button
-          className="popup__button-submit popup__button-submit_valid"
-          type="submit"
-        >
-          Создать
-        </button>
+       
       </PopupWithForm>
 
-      <PopupWithForm name="delete" title="Вы уверены?" onClose={closeAllPopups}>
-        <button
-          className="popup__button-submit popup__button-submit_valid"
-          type="submit"
-        >
-          Да
-        </button>
+      <PopupWithForm
+       name="delete"
+       title="Вы уверены?"
+       onClose={closeAllPopups}
+       buttonText={"Да"}
+       >
+        
       </PopupWithForm>
 
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
-
-        
-      </div>
-    
+      </div>    
   );
 }
 
