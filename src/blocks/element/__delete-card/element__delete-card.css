@@ -1,4 +1,4 @@
-.element__del {
+.element__delete-card {
   background-image: url(../../../images/trash-button.svg);
   width: 18px;
   height: 19px;
@@ -6,13 +6,11 @@
   cursor: pointer;
   top: 20px;
   right: 20px;
-  opacity: 1;
+  opacity: 0;
+  transition: all 0.5s ease-out;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
-}
-
-.element__del:hover {
-  opacity: 0.6;
+  z-index: 3;
 }
