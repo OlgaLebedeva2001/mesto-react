@@ -27,7 +27,6 @@ function Main({
   ));
 
   return (
-    <>
       <main className="content page__content">
         {/*Информация о пользователе*/}
         <section className="profile">
@@ -74,7 +73,6 @@ function Main({
           {cardElements}
         </section>
       </main>
-    </>
   );
 }
 

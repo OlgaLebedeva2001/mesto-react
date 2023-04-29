@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import '../index.css';
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
@@ -13,9 +12,9 @@ import EditProfilePopup from "./EditProfilePopup";
 import AddPlacePopup from "./AddPlacePopup";
 
 function App() {
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState("");
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState("");
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState("");
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
 
   const [currentUser, setCurrentUser] = useState({});
